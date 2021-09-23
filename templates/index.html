@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Welcome to the stock Tracker</h1>
+<p>Enter stock to see the price and news</p>
+<form action="{{ url_for('info') }}">
+<label for="stock_name">Stock Sticker</label>
+<input type="text" name="stock_name" value="BAC">
+<label for="company_name">Company Name</label>
+<input type="text" name="company_name" value="Bank Of America">
+<input type="submit" value="search">
+</form>
+
+{% endblock %}
+
+

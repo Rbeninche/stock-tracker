@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Result about {{ stock_name }} / {{ company_name }}</h1>
+<div class="card">
+  <div class="card-header bg-info">
+      <p>Yesterday: ${{ yesterday }} | Day Before yesterday: ${{ day_before }} Price </p>
+      <p>Daily stock percentage change: {{ difference }}%</p>
+  </div>
+    {% if articles | length > 1 %}
+        <ol>
+          {% for article in articles %}
+              <li>
+               <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>{{ article }}</p>
+    </blockquote>
+  </div>
+              </li>
+
+{% endfor %}
+        </ol>
+
+    {% endif %}
+</div>
+{% endblock %}
+
